@@ -1,0 +1,2 @@
+questo sara un push_swap con le liste pero seguendo una guida in inglese 
+magari non sara corretta ma magari mi da una idea di come funzionino le cose
