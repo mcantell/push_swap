@@ -5,24 +5,63 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcantell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/03 12:07:19 by mcantell          #+#    #+#             */
-/*   Updated: 2024/04/03 12:17:00 by mcantell         ###   ########.fr       */
+/*   Created: 2024/04/11 22:45:46 by mcantell          #+#    #+#             */
+/*   Updated: 2024/04/12 05:07:04 by mcantell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-//returni zero perche a noi serve che vengano mostrati a schermo solo
-// i tipi di mosse fatte e giustamente se hai un solo numero vuol dire
-//fhe e gia ordinata
+
+//passi il puntatore al puntatore della lista &a
+//tu scorri la matrice ti aggiungi pezzi alla fine e hai la testa fissata
+//ci passiamo anche ac perche cosi ti fai il controllo da dove partire
+t_stack	*ft_take(t_stack *a, char **av, int ac)
+{
+	t_stack	*d;
+	char	**str;
+	int		i;
+
+	i = 0;
+	if (ac == 2)
+		str = ft_split(av[1], ' ');
+	else
+	{
+		i = 1;
+		str = av;
+	}
+	while (str[i])
+	{
+		d = ft_new(ft_atoi(str[i]));
+		ft_lstadd_back(&a, d);
+		i++;
+	}
+	return (a);
+}
 
 int	main(int ac, char **av)
 {
-	t_stack	*stack;
+	t_stack	*d;
+	t_stack	*a;
+	// t_stack	*b;
 
-	if (ac < 2)
-		return (0);
-	stack = init(ac, av);
-	ft_sorter(satck);
-	ft_exit(stack);
+	a = NULL;
+	// b = NULL;
+	check_tot(ac, (char **)av);
+	a = ft_take(a, av, ac);
+	d = a;
+	while (d->next != NULL)
+	{
+		printf("%d\n", d->num);
+		d = d->next;
+	}
+	printf("%d\n", d->num);
+	ft_swap(a, 'a', 0);
+	d = a;
+	while (d->next != NULL)
+	{
+		printf("%d\n", d->num);
+		d = d->next;
+	}
+	printf("%d\n", d->num);
 	return (0);
 }

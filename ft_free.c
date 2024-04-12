@@ -1,36 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_free.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcantell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/03 12:19:05 by mcantell          #+#    #+#             */
-/*   Updated: 2024/04/12 05:05:51 by mcantell         ###   ########.fr       */
+/*   Created: 2024/04/12 00:31:27 by mcantell          #+#    #+#             */
+/*   Updated: 2024/04/12 00:32:56 by mcantell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_atoi(char *str)
+void	ft_free(char **str)
 {
-	int	res;
-	int	sign;
+	int	i;
 
-	res = 0;
-	sign = 1;
-	while (*str <= 32)
-		str++;
-	if (*str == '-' || *str == '+')
+	i = 0;
+	while (str[i])
 	{
-		if (*str == '-')
-			sign *= -1;
-		str++;
+		free(str[i]);
+		i++;
 	}
-	while (*str >= '0' && *str <= '9')
-	{
-		res = res * 10 + *str - '0';
-		str++;
-	}
-	return (res * sign);
+	free(str);
 }
