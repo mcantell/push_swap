@@ -6,7 +6,7 @@
 /*   By: mcantell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 12:02:54 by mcantell          #+#    #+#             */
-/*   Updated: 2024/04/12 04:47:17 by mcantell         ###   ########.fr       */
+/*   Updated: 2024/04/12 06:05:52 by mcantell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,4 +42,5 @@ void	check_tot(int ac, char **av);
 void	art3(void);
 t_stack	*ft_take(t_stack *a, char **av, int ac);
 void	ft_swap(t_stack *str, char s, int flag);
+void	ft_rotate(t_stack **str, char s, int flag);
 #endif

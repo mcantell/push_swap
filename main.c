@@ -6,7 +6,7 @@
 /*   By: mcantell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 22:45:46 by mcantell          #+#    #+#             */
-/*   Updated: 2024/04/12 05:07:04 by mcantell         ###   ########.fr       */
+/*   Updated: 2024/04/12 06:06:13 by mcantell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ int	main(int ac, char **av)
 		d = d->next;
 	}
 	printf("%d\n", d->num);
-	ft_swap(a, 'a', 0);
+	ft_rotate(&a, 'a', 0);
 	d = a;
 	while (d->next != NULL)
 	{
