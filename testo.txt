@@ -1,3 +1,4 @@
 questo sara un push_swap con le liste
 quindi sara una studiata del radix sort che lavora sfruttando i bits
 
+ruberemo un algoritmo che ci dia il 100% perche hanno cambiato il subject

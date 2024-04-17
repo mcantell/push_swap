@@ -6,7 +6,7 @@
 /*   By: mcantell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 12:26:49 by mcantell          #+#    #+#             */
-/*   Updated: 2024/04/12 04:56:08 by mcantell         ###   ########.fr       */
+/*   Updated: 2024/04/17 16:28:30 by mcantell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	ft_number(char *str)
 int	ft_limit(char **argv)
 {
 	int	num;
-	int		i;
+	int	i;
 
 	i = 0;
 	while (argv[i])
@@ -44,7 +44,7 @@ int	ft_limit(char **argv)
 		if (ft_strlen(argv[i]) > 12)
 			return (0);
 		num = ft_atoi(argv[i]);
-		if (num > INT_MAX || num < INT_MIN)
+		if (num > 2147483647 || num < -2147483648)
 			return (0);
 		i++;
 	}
@@ -99,4 +99,20 @@ void	check_tot(int ac, char **av)
 	}
 	if (ac == 2)
 		ft_free(str);
+}
+
+//facciamo un check per vedere se e' sortato
+int	ft_check_sort(t_stack *str)
+{
+	int	i;
+
+	i = str->num;
+	while (i)
+	{
+		if (str->num < i)
+			return (0);
+		i = str->num;
+		str = str->next;
+	}
+	return (1);
 }

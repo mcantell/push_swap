@@ -6,7 +6,7 @@
 /*   By: mcantell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 15:52:21 by mcantell          #+#    #+#             */
-/*   Updated: 2024/04/12 04:58:30 by mcantell         ###   ########.fr       */
+/*   Updated: 2024/04/17 16:02:40 by mcantell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ t_stack	*ft_new(int i)
 	return (new);
 }
 
+//qui ti crei un nodo che si aggiunge all'ultimo
 void	ft_lstadd_back(t_stack **lst, t_stack *new)
 {
 	t_stack	*war;
@@ -43,6 +44,7 @@ void	ft_lstadd_back(t_stack **lst, t_stack *new)
 	war -> next = new;
 }
 
+//questo ti serve per capire quanto e lunga la lista
 int	ft_lstsize(t_stack *lst)
 {
 	int	i;
@@ -56,10 +58,21 @@ int	ft_lstsize(t_stack *lst)
 	return (i);
 }
 
+//questo ti aggiunge un nodo all'inizio
 void	ft_lstadd_front(t_stack **lst, t_stack *new)
 {
 	if (!lst || !new)
 		return ;
 	new -> next = *lst;
 	*lst = new;
+}
+
+//questo scorre fino ad arrivare all'ultimo nodo
+t_stack	*ft_lstlast(t_stack *str)
+{
+	if (!str)
+		return (NULL);
+	while (str->next->next != NULL)
+		str = str->next;
+	return (str);
 }
