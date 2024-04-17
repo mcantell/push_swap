@@ -6,7 +6,7 @@
 /*   By: mcantell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 12:02:54 by mcantell          #+#    #+#             */
-/*   Updated: 2024/04/17 16:35:42 by mcantell         ###   ########.fr       */
+/*   Updated: 2024/04/17 18:29:41 by mcantell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,4 +48,16 @@ t_stack	*ft_lstlast(t_stack *str);
 void	reverse_r(t_stack **str, char s, int flag);
 void	ft_push(t_stack **stra, t_stack **strb, char s);
 int		ft_check_sort(t_stack *str);
+void	ft_lst_arg(char **av, t_stack **str);
+t_stack	*quote(char **av);
+t_stack	*arg_parse(int ac, char **av);
+int		min(t_stack *str);
+int		max(t_stack *str);
+int		index(t_stack *str, int num);
+int		find_in_b(t_stack *strb, int nbr);
+int		find_in_a(t_stack *stra, int nbr);
+int		case_rarb(t_stack *stra, t_stack *strb, int c);
+int		case_rrarrb(t_stack *stra, t_stack *strb, int c);
+int		case_rrarb(t_stack *stra, t_stack *strb, int c);
+int		case_rarrb(t_stack *stra, t_stack *strb, int c);
 #endif
