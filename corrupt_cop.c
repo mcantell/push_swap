@@ -6,7 +6,7 @@
 /*   By: mcantell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 12:26:49 by mcantell          #+#    #+#             */
-/*   Updated: 2024/04/17 16:28:30 by mcantell         ###   ########.fr       */
+/*   Updated: 2024/04/18 04:37:19 by mcantell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,8 @@ int	ft_number(char *str)
 //se e compreso tra il min int e il max int
 int	ft_limit(char **argv)
 {
-	int	num;
-	int	i;
+	long	num;
+	int		i;
 
 	i = 0;
 	while (argv[i])

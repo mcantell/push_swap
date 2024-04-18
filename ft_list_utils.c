@@ -6,7 +6,7 @@
 /*   By: mcantell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 17:37:28 by mcantell          #+#    #+#             */
-/*   Updated: 2024/04/17 18:03:37 by mcantell         ###   ########.fr       */
+/*   Updated: 2024/04/18 04:38:14 by mcantell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,14 +43,14 @@ int	min(t_stack *str)
 }
 
 //troviamo l'indice, fai scorrere la lista finche non trovi il numero passato
-int	index(t_stack *str, int num)
+int	ft_index(t_stack *str, int num)
 {
 	int	i;
 
 	i = 0;
 	while (str->num != num)
 	{
-		str->next;
+		str = str->next;
 		i++;
 	}
 	str->index = 0;
@@ -67,7 +67,7 @@ int	find_in_b(t_stack *strb, int nbr)
 	if (nbr > strb->num && nbr < ft_lstlast(strb)->num)
 		i = 0;
 	else if (nbr > max(strb) || nbr < min(strb))
-		i = index(strb, max(strb));
+		i = ft_index(strb, max(strb));
 	else
 	{
 		tmp = strb->next;
@@ -91,7 +91,7 @@ int	find_in_a(t_stack *stra, int nbr)
 	if (nbr > stra->num && nbr < ft_lstlast(stra)->num)
 		i = 0;
 	else if (nbr > max(stra) || nbr < min(stra))
-		i = index(stra, max(stra));
+		i = ft_index(stra, max(stra));
 	else
 	{
 		tmp = stra->next;

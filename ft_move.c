@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_cazzim.c                                        :+:      :+:    :+:   */
+/*   ft_move.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mcantell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 03:49:02 by mcantell          #+#    #+#             */
-/*   Updated: 2024/04/17 16:15:27 by mcantell         ###   ########.fr       */
+/*   Updated: 2024/04/18 04:38:34 by mcantell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 //qui ci si mettono le varie bellissime operazioni
-void	ft_swap(t_stack *str, char s, int flag)
+void	ft_swap(t_stack **str, char s, int flag)
 {
 	int	i;
 
-	i = str->num;
-	str->num = str->next->num;
-	str->next->num = i;
+	i = (*str)->num;
+	(*str)->num = (*str)->next->num;
+	(*str)->next->num = i;
 	if (flag == 0)
 	{
 		write (1, "s", 1);
@@ -105,8 +105,8 @@ void	double_all(t_stack	**stra, t_stack **strb, int flag)
 {
 	if (flag == 0)
 	{
-		swap(stra, 'a', 1);
-		swap(strb, 'b', 1);
+		ft_swap(stra, 'a', 1);
+		ft_swap(strb, 'b', 1);
 		write (1, "ss", 2);
 		write (1, "\n", 1);
 	}

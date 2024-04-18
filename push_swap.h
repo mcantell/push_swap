@@ -6,7 +6,7 @@
 /*   By: mcantell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 12:02:54 by mcantell          #+#    #+#             */
-/*   Updated: 2024/04/17 18:29:41 by mcantell         ###   ########.fr       */
+/*   Updated: 2024/04/18 05:03:11 by mcantell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int		ft_strlen(char *str);
 void	check_tot(int ac, char **av);
 void	art3(void);
 t_stack	*ft_take(t_stack *a, char **av, int ac);
-void	ft_swap(t_stack *str, char s, int flag);
+void	ft_swap(t_stack **str, char s, int flag);
 void	ft_rotate(t_stack **str, char s, int flag);
 void	double_all(t_stack	**stra, t_stack **strb, int flag);
 t_stack	*ft_lstlast(t_stack *str);
@@ -53,11 +53,30 @@ t_stack	*quote(char **av);
 t_stack	*arg_parse(int ac, char **av);
 int		min(t_stack *str);
 int		max(t_stack *str);
-int		index(t_stack *str, int num);
+int		ft_index(t_stack *str, int num);
 int		find_in_b(t_stack *strb, int nbr);
 int		find_in_a(t_stack *stra, int nbr);
 int		case_rarb(t_stack *stra, t_stack *strb, int c);
 int		case_rrarrb(t_stack *stra, t_stack *strb, int c);
 int		case_rrarb(t_stack *stra, t_stack *strb, int c);
 int		case_rarrb(t_stack *stra, t_stack *strb, int c);
+int		apply_rarb(t_stack **stra, t_stack **strb, char c, int i);
+int		apply_rrarrb(t_stack **stra, t_stack **strb, char c, int i);
+int		apply_rrarb(t_stack **stra, t_stack **strb, char c, int i);
+int		apply_rarrb(t_stack **stra, t_stack **strb, char c, int i);
+int		case_rarb_1(t_stack *stra, t_stack *strb, int c);
+int		case_rrarrb_1(t_stack *stra, t_stack *strb, int c);
+int		case_rrarb_1(t_stack *stra, t_stack *strb, int c);
+int		case_rarrb_1(t_stack *stra, t_stack *strb, int c);
+int		rotate_type_ba(t_stack *stra, t_stack *strb);
+int		rotate_type_ab(t_stack *stra, t_stack *strb);
+void	sort_three(t_stack **stra);
+void	sort_b_till_3(t_stack **stra, t_stack **strb);
+t_stack	**sort_a(t_stack **stra, t_stack **strb);
+t_stack	*sort_b(t_stack **stra);
+void	sort(t_stack **stra);
+t_stack	*ft_process(int ac, char **av);
+t_stack	*ft_process_arg(char *arg, t_stack	*str);
+void	free_stack(t_stack **stack);
+char	*ft_strchr(const char *s, int c);
 #endif

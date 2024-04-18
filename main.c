@@ -6,7 +6,7 @@
 /*   By: mcantell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 22:45:46 by mcantell          #+#    #+#             */
-/*   Updated: 2024/04/12 06:06:13 by mcantell         ###   ########.fr       */
+/*   Updated: 2024/04/18 05:00:29 by mcantell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,28 +40,20 @@ t_stack	*ft_take(t_stack *a, char **av, int ac)
 
 int	main(int ac, char **av)
 {
-	t_stack	*d;
-	t_stack	*a;
-	// t_stack	*b;
+	t_stack	*stra;
 
-	a = NULL;
-	// b = NULL;
-	check_tot(ac, (char **)av);
-	a = ft_take(a, av, ac);
-	d = a;
-	while (d->next != NULL)
+	if (ac == 2)
+		return (0);
+	stra = ft_process(ac, av);
+	check_tot(ac, av);
+	if (!*av[1] || !stra)
 	{
-		printf("%d\n", d->num);
-		d = d->next;
+		free_stack(&stra);
+		art3();
+		exit(-1);
 	}
-	printf("%d\n", d->num);
-	ft_rotate(&a, 'a', 0);
-	d = a;
-	while (d->next != NULL)
-	{
-		printf("%d\n", d->num);
-		d = d->next;
-	}
-	printf("%d\n", d->num);
+	else if (!ft_check_sort(stra))
+		sort(&stra);
+	free_stack(&stra);
 	return (0);
 }
