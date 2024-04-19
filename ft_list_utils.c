@@ -6,7 +6,7 @@
 /*   By: mcantell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 17:37:28 by mcantell          #+#    #+#             */
-/*   Updated: 2024/04/18 04:38:14 by mcantell         ###   ########.fr       */
+/*   Updated: 2024/04/19 14:44:56 by mcantell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,14 +88,16 @@ int	find_in_a(t_stack *stra, int nbr)
 	int		i;
 
 	i = 1;
-	if (nbr > stra->num && nbr < ft_lstlast(stra)->num)
+	if (!stra)
+		return (0);
+	if (nbr < stra->num && nbr > ft_lstlast(stra)->num)
 		i = 0;
 	else if (nbr > max(stra) || nbr < min(stra))
 		i = ft_index(stra, max(stra));
 	else
 	{
 		tmp = stra->next;
-		while (stra->num < nbr || tmp->num > nbr)
+		while (stra->num > nbr || tmp->num < nbr)
 		{
 			stra = stra->next;
 			tmp = stra->next;

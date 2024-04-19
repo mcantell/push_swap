@@ -6,7 +6,7 @@
 /*   By: mcantell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 18:28:12 by mcantell          #+#    #+#             */
-/*   Updated: 2024/04/18 04:35:21 by mcantell         ###   ########.fr       */
+/*   Updated: 2024/04/19 16:16:00 by mcantell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,17 @@ int	case_rrarrb_1(t_stack *stra, t_stack *strb, int c)
 	return (i);
 }
 
+int	case_rarrb_1(t_stack *stra, t_stack *strb, int c)
+{
+	int	i;
+
+	i = 0;
+	if (ft_index(strb, c))
+		i = ft_lstsize(strb) - ft_index(strb, c);
+	i = find_in_a(stra, c) + i;
+	return (i);
+}
+
 int	case_rrarb_1(t_stack *stra, t_stack *strb, int c)
 {
 	int	i;
@@ -42,16 +53,5 @@ int	case_rrarb_1(t_stack *stra, t_stack *strb, int c)
 	if (find_in_a(stra, c))
 		i = ft_lstsize(stra) - find_in_a(stra, c);
 	i = ft_index(strb, c) + i;
-	return (i);
-}
-
-int	case_rarrb_1(t_stack *stra, t_stack *strb, int c)
-{
-	int	i;
-
-	i = 0;
-	if (find_in_b(strb, c))
-		i = ft_lstsize(strb) - ft_index(strb, c);
-	i = find_in_a(stra, c) + i;
 	return (i);
 }

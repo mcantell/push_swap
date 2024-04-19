@@ -6,7 +6,7 @@
 /*   By: mcantell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 03:49:02 by mcantell          #+#    #+#             */
-/*   Updated: 2024/04/18 04:38:34 by mcantell         ###   ########.fr       */
+/*   Updated: 2024/04/19 14:15:09 by mcantell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,14 +34,14 @@ void	ft_swap(t_stack **str, char s, int flag)
 void	ft_rotate(t_stack **str, char s, int flag)
 {
 	t_stack	*head;
-	t_stack	*second;
+	t_stack	*last;
 
 	head = *str;
 	(*str) = (*str)->next;
-	second = *str;
-	while (second->next != NULL)
-		second = second->next;
-	second->next = head;
+	last = *str;
+	while (last->next != NULL)
+		last = last->next;
+	last->next = head;
 	head->next = NULL;
 	if (flag == 0)
 	{
@@ -68,10 +68,13 @@ void	ft_push(t_stack **stra, t_stack **strb, char s)
 	}
 	else
 	{
-		tmp = *strb;
-		*strb = (*strb)->next;
-		tmp->next = *stra;
-		*stra = tmp;
+		if (*strb != NULL)
+		{
+			tmp = *strb;
+			*strb = (*strb)->next;
+			tmp->next = *stra;
+			*stra = tmp;
+		}
 	}
 	write (1, "p", 1);
 	write (1, &s, 1);

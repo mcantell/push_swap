@@ -6,56 +6,56 @@
 /*   By: mcantell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 23:45:35 by mcantell          #+#    #+#             */
-/*   Updated: 2024/04/18 00:18:39 by mcantell         ###   ########.fr       */
+/*   Updated: 2024/04/19 14:52:02 by mcantell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	apply_rarb(t_stack **stra, t_stack **strb, char c, int i)
+int	apply_rarb(t_stack **a, t_stack **b, int c, char s)
 {
-	if (c == 'a')
+	if (s == 'a')
 	{
-		while ((*stra)->num != i && find_in_b(*strb, i) > 0)
-			double_all(stra, strb, 2);
-		while ((*stra)->num != i)
-			ft_rotate(stra, 'a', 0);
-		while (find_in_b(*strb, i) > 0)
-			ft_rotate(strb, 'b', 0);
-		ft_push(stra, strb, 'b');
+		while ((*a)->num != c && find_in_b(*b, c) > 0)
+			double_all(a, b, 2);
+		while ((*a)->num != c)
+			ft_rotate(a, 'a', 0);
+		while (find_in_b(*b, c) > 0)
+			ft_rotate(a, 'b', 0);
+		ft_push(a, b, 'b');
 	}
 	else
 	{
-		while ((*strb)->num != i && find_in_a(*stra, i) > 0)
-			double_all(stra, strb, 2);
-		while ((*strb)->num != i)
-			ft_rotate(strb, 'b', 0);
-		while (find_in_a(*stra, i) > 0)
-			ft_rotate(stra, 'a', 0);
-		ft_push(stra, strb, 'a');
+		while ((*b)->num != c && find_in_a(*a, c) > 0)
+			double_all(a, b, 2);
+		while ((*b)->num != c)
+			ft_rotate(a, 'b', 0);
+		while (find_in_a(*a, c) > 0)
+			ft_rotate(a, 'a', 0);
+		ft_push(a, b, 'a');
 	}
 	return (-1);
 }
 
-int	apply_rrarrb(t_stack **stra, t_stack **strb, char c, int i)
+int	apply_rrarrb(t_stack **stra, t_stack **strb, int c, char s)
 {
-	if (c == 'a')
+	if (s == 'a')
 	{
-		while ((*stra)->num != i && find_in_b(*strb, i) > 0)
-			double_all(stra, strb, 3);
-		while ((*stra)->num != i)
+		while ((*stra)->num != c && find_in_b(*strb, c) > 0)
+			double_all(stra, stra, 2);
+		while ((*stra)->num != c)
 			reverse_r(stra, 'a', 0);
-		while (find_in_b(*strb, i) > 0)
+		while (find_in_b(*strb, c) > 0)
 			reverse_r(strb, 'b', 0);
 		ft_push(stra, strb, 'b');
 	}
 	else
 	{
-		while ((*strb)->num != i && find_in_a(*stra, i) > 0)
-			double_all(stra, strb, 3);
-		while ((*strb)->num != i)
+		while ((*strb)->num != c && find_in_a(*stra, c) > 0)
+			double_all(stra, strb, 2);
+		while ((*strb)->num != c)
 			reverse_r(strb, 'b', 0);
-		while (find_in_a(*stra, i) > 0)
+		while (find_in_a(*stra, c) > 0)
 			reverse_r(stra, 'a', 0);
 		ft_push(stra, strb, 'a');
 	}

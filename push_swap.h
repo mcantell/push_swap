@@ -6,7 +6,7 @@
 /*   By: mcantell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 12:02:54 by mcantell          #+#    #+#             */
-/*   Updated: 2024/04/18 05:03:11 by mcantell         ###   ########.fr       */
+/*   Updated: 2024/04/19 14:48:18 by mcantell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,8 +60,7 @@ int		case_rarb(t_stack *stra, t_stack *strb, int c);
 int		case_rrarrb(t_stack *stra, t_stack *strb, int c);
 int		case_rrarb(t_stack *stra, t_stack *strb, int c);
 int		case_rarrb(t_stack *stra, t_stack *strb, int c);
-int		apply_rarb(t_stack **stra, t_stack **strb, char c, int i);
-int		apply_rrarrb(t_stack **stra, t_stack **strb, char c, int i);
+int		apply_rarb(t_stack **a, t_stack **b, int c, char s);
 int		apply_rrarb(t_stack **stra, t_stack **strb, char c, int i);
 int		apply_rarrb(t_stack **stra, t_stack **strb, char c, int i);
 int		case_rarb_1(t_stack *stra, t_stack *strb, int c);
@@ -79,4 +78,5 @@ t_stack	*ft_process(int ac, char **av);
 t_stack	*ft_process_arg(char *arg, t_stack	*str);
 void	free_stack(t_stack **stack);
 char	*ft_strchr(const char *s, int c);
+int		apply_rrarrb(t_stack **stra, t_stack **strb, int c, char s);
 #endif

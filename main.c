@@ -6,7 +6,7 @@
 /*   By: mcantell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 22:45:46 by mcantell          #+#    #+#             */
-/*   Updated: 2024/04/18 05:00:29 by mcantell         ###   ########.fr       */
+/*   Updated: 2024/04/19 13:27:36 by mcantell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int	main(int ac, char **av)
 {
 	t_stack	*stra;
 
-	if (ac == 2)
+	if (ac < 2)
 		return (0);
 	stra = ft_process(ac, av);
 	check_tot(ac, av);

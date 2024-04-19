@@ -6,7 +6,7 @@
 /*   By: mcantell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 18:05:53 by mcantell          #+#    #+#             */
-/*   Updated: 2024/04/18 04:34:47 by mcantell         ###   ########.fr       */
+/*   Updated: 2024/04/19 14:35:27 by mcantell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ int	case_rrarrb(t_stack *stra, t_stack *strb, int c)
 	i = 0;
 	if (find_in_b(strb, c))
 		i = ft_lstsize(strb) - find_in_b(strb, c);
-	if (i < (ft_lstsize(stra) - find_in_a(stra, c)) && ft_index(stra, c))
-		i = ft_lstsize(stra) - find_in_a(stra, c);
+	if (i < (ft_lstsize(stra) - ft_index(stra, c)) && ft_index(stra, c))
+		i = ft_lstsize(stra) - ft_index(stra, c);
 	return (i);
 }
 
