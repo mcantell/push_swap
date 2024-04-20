@@ -6,7 +6,7 @@
 /*   By: mcantell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 12:02:54 by mcantell          #+#    #+#             */
-/*   Updated: 2024/04/19 14:48:18 by mcantell         ###   ########.fr       */
+/*   Updated: 2024/04/20 12:49:33 by mcantell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,5 +78,5 @@ t_stack	*ft_process(int ac, char **av);
 t_stack	*ft_process_arg(char *arg, t_stack	*str);
 void	free_stack(t_stack **stack);
 char	*ft_strchr(const char *s, int c);
-int		apply_rrarrb(t_stack **stra, t_stack **strb, int c, char s);
+int		apply_rrarrb(t_stack **stra, t_stack **strb, char s, int c);
 #endif

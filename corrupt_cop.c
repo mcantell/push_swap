@@ -6,7 +6,7 @@
 /*   By: mcantell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 12:26:49 by mcantell          #+#    #+#             */
-/*   Updated: 2024/04/19 16:32:24 by mcantell         ###   ########.fr       */
+/*   Updated: 2024/04/20 14:16:55 by mcantell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,12 +104,14 @@ void	check_tot(int ac, char **av)
 //facciamo un check per vedere se e' sortato
 int	ft_check_sort(t_stack *str)
 {
-	if (!str)
-		return (0);
-	while (str->next != NULL)
+	int	value;
+
+	value = str->num;
+	while (str)
 	{
-		if (str->num > str->next->num)
+		if (str->num < value)
 			return (0);
+		value = str->num;
 		str = str->next;
 	}
 	return (1);

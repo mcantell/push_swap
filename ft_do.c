@@ -6,7 +6,7 @@
 /*   By: mcantell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 23:45:35 by mcantell          #+#    #+#             */
-/*   Updated: 2024/04/19 14:52:02 by mcantell         ###   ########.fr       */
+/*   Updated: 2024/04/20 14:47:29 by mcantell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	apply_rarb(t_stack **a, t_stack **b, int c, char s)
 		while ((*a)->num != c)
 			ft_rotate(a, 'a', 0);
 		while (find_in_b(*b, c) > 0)
-			ft_rotate(a, 'b', 0);
+			ft_rotate(b, 'b', 0);
 		ft_push(a, b, 'b');
 	}
 	else
@@ -29,7 +29,7 @@ int	apply_rarb(t_stack **a, t_stack **b, int c, char s)
 		while ((*b)->num != c && find_in_a(*a, c) > 0)
 			double_all(a, b, 2);
 		while ((*b)->num != c)
-			ft_rotate(a, 'b', 0);
+			ft_rotate(b, 'b', 0);
 		while (find_in_a(*a, c) > 0)
 			ft_rotate(a, 'a', 0);
 		ft_push(a, b, 'a');
@@ -37,7 +37,7 @@ int	apply_rarb(t_stack **a, t_stack **b, int c, char s)
 	return (-1);
 }
 
-int	apply_rrarrb(t_stack **stra, t_stack **strb, int c, char s)
+int	apply_rrarrb(t_stack **stra, t_stack **strb, char s, int c)
 {
 	if (s == 'a')
 	{

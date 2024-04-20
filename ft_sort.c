@@ -6,7 +6,7 @@
 /*   By: mcantell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 04:10:14 by mcantell          #+#    #+#             */
-/*   Updated: 2024/04/19 14:39:47 by mcantell         ###   ########.fr       */
+/*   Updated: 2024/04/20 14:49:28 by mcantell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,11 @@ void	sort_b_till_3(t_stack **stra, t_stack **strb)
 			if (i == case_rarb(*stra, *strb, tmp->num))
 				i = apply_rarb(stra, strb, tmp->num, 'a');
 			else if (i == case_rrarrb(*stra, *strb, tmp->num))
-				i = apply_rrarrb(stra, strb, tmp->num, 'a');
+				i = apply_rrarrb(stra, strb, 'a', tmp->num);
 			else if (i == case_rarrb(*stra, *strb, tmp->num))
-				i = apply_rarrb(stra, strb, tmp->num, 'a');
+				i = apply_rarrb(stra, strb, 'a', tmp->num);
 			else if (i == case_rrarb(*stra, *strb, tmp->num))
-				i = apply_rrarb(stra, strb, tmp->num, 'a');
+				i = apply_rrarb(stra, strb, 'a', tmp->num);
 			else
 				tmp = tmp->next;
 		}
@@ -67,11 +67,11 @@ t_stack	**sort_a(t_stack **stra, t_stack **strb)
 			if (i == case_rarb_1(*stra, *strb, tmp->num))
 				i = apply_rarb(stra, strb, tmp->num, 'b');
 			else if (i == case_rarrb_1(*stra, *strb, tmp->num))
-				i = apply_rarrb(stra, strb, tmp->num, 'b');
+				i = apply_rarrb(stra, strb, 'b', tmp->num);
 			else if (i == case_rrarrb_1(*stra, *strb, tmp->num))
-				i = apply_rrarrb(stra, strb, tmp->num, 'b');
+				i = apply_rrarrb(stra, strb, 'b', tmp->num);
 			else if (i == case_rrarb_1(*stra, *strb, tmp->num))
-				i = apply_rrarb(stra, strb, tmp->num, 'b');
+				i = apply_rrarb(stra, strb, 'b', tmp->num);
 			else
 				tmp = tmp->next;
 		}
