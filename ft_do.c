@@ -6,7 +6,7 @@
 /*   By: mcantell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 23:45:35 by mcantell          #+#    #+#             */
-/*   Updated: 2024/04/20 14:47:29 by mcantell         ###   ########.fr       */
+/*   Updated: 2024/05/02 17:26:18 by mcantell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int	apply_rrarrb(t_stack **stra, t_stack **strb, char s, int c)
 	if (s == 'a')
 	{
 		while ((*stra)->num != c && find_in_b(*strb, c) > 0)
-			double_all(stra, stra, 2);
+			double_all(stra, stra, 3);
 		while ((*stra)->num != c)
 			reverse_r(stra, 'a', 0);
 		while (find_in_b(*strb, c) > 0)
@@ -52,7 +52,7 @@ int	apply_rrarrb(t_stack **stra, t_stack **strb, char s, int c)
 	else
 	{
 		while ((*strb)->num != c && find_in_a(*stra, c) > 0)
-			double_all(stra, strb, 2);
+			double_all(stra, strb, 3);
 		while ((*strb)->num != c)
 			reverse_r(strb, 'b', 0);
 		while (find_in_a(*stra, c) > 0)

@@ -6,7 +6,7 @@
 /*   By: mcantell <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 15:52:21 by mcantell          #+#    #+#             */
-/*   Updated: 2024/04/17 16:02:40 by mcantell         ###   ########.fr       */
+/*   Updated: 2024/05/02 17:13:30 by mcantell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ t_stack	*ft_lstlast(t_stack *str)
 {
 	if (!str)
 		return (NULL);
-	while (str->next->next != NULL)
+	while (str->next)
 		str = str->next;
 	return (str);
 }
