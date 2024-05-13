@@ -6,7 +6,7 @@
 #    By: mcantell <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/11 22:47:28 by mcantell          #+#    #+#              #
-#    Updated: 2024/04/18 05:03:25 by mcantell         ###   ########.fr        #
+#    Updated: 2024/05/06 12:10:32 by mcantell         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ CFLAGS = -Wall -Werror -Wextra
 SRC =	art.c corrupt_cop.c ft_atoi.c ft_case_solver_1.c\
 ft_case_solver2.c ft_do.c ft_free.c ft_list_utils.c ft_lst_arg.c\
 ft_move.c ft_rotate_type.c ft_sort_three.c ft_sort.c ft_split.c\
-ft_stack.c ft_strlen.c ft_strncmp.c ft_substr.c main.c ft_process.c ft_strchr.c\
+ft_stack.c ft_strlen.c ft_strncmp.c ft_substr.c push_swap.c ft_process.c ft_strchr.c\
 
 %.o: %.c
 	gcc $(CFLAGS) -c $< -o $@

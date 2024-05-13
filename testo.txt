@@ -1,4 +1,16 @@
-questo sara un push_swap con le liste
-quindi sara una studiata del radix sort che lavora sfruttando i bits
+questo e push_swap con le liste
 
-ruberemo un algoritmo che ci dia il 100% perche hanno cambiato il subject
+ho usato il mechanical turk come algoritmo e funziona cosi:
+lui cerca di calcolarti quale dei numeri dello stack a con meno mosse possibili
+possa essere portato nello stack b in cercando di metterlo in ordine decrescente
+pero controllando all'inizio gli argomenti, noti quanti sono e se conviene fare il
+sort per tre numeri o meno se sono per l'appunto tre o meno. Se nota che sono di piu
+comunque ne pusha uno o due, dipende dal caso, nello stack b.
+Il tutto cercando di avere un  massimo nella parte iniziale dello stack b e il minimo
+alla fine. Poi cerchi di mettere in ordine il tuo stack a e pushare nel modo corretto
+da b ad a.
+Nel caso avessimo una lista in a molto lunga di numeri ti calcoli invece il numero
+minimo di mosse per ogni elemento di a poi pusharlo in b sempre cercando di avere lo stack in
+ordine decrescente. Quindi ti calcoli non solo le mosse del push ma soprattutto quelle
+per mettere il numero in questione nella posizione corretta nello stack b, finche non si arriva ad
+avere lo stack a con tre numeri. A questo punto tu ti fai il sort three e pushi tutto da b ad a.
