@@ -21,9 +21,9 @@ void	sort_three(t_stack **stra)
 	}
 	else if (max(*stra) == (*stra)->num)
 	{
-		ft_rotate(stra, 'a', 0);
-		if (!(ft_check_sort(*stra)))
-			ft_swap(stra, 'a', 0);
+		ft_rotate(stra, 'b', 0);
+		if (!(ft_check_sort(*strb)))
+			ft_swap(stra, 'b', 0);
 	}
 	else
 	{

@@ -99,7 +99,7 @@ void	sort(t_stack **stra)
 		}
 		else
 		{
-			while ((*stra)->num != min(*stra))
+			while ((*stra)->num != max(*stra))
 				reverse_r(stra, 'a', 0);
 		}
 	}

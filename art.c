@@ -71,5 +71,6 @@ void	art3(void)
 		while (i2 != 500000000)
 			i2++;
 		i++;
+		printf("sei morto\n");
 	}
 }
